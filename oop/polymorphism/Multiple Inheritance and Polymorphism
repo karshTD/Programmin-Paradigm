@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class Shape {
+public:
+    virtual void draw() {
+        cout << "Drawing Shape" << endl;
+    }
+};
+
+class Color {
+public:
+    virtual void fill() {
+        cout << "Filling color" << endl;
+    }
+};
+
+class Circle : public Shape, public Color {
+public:
+    void draw() override {
+        cout << "Drawing Circle" << endl;
+    }
+
+    void fill() override {
+        cout << "Filling Circle with Color" << endl;
+    }
+};
+
+int main() {
+    Circle c;
+    c.draw();
+    c.fill();
+    return 0;
+}
